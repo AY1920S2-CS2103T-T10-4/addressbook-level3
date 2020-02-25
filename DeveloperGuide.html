@@ -777,16 +777,105 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="sect1">
 <h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Accessibility</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
+<p>App should be colourblind-friendly.</p>
 </li>
 <li>
-<p>Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.</p>
+<p>Colourblind users should be able to discern all text and information on the GUI to the same extent as
+non-colourblind individuals.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Extensibility</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>App should be able to support feature increments without breaking existing features.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Interoperability</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>App should work on any mainstream OS as long as it has Java 11 or above installed.</p>
 </li>
 <li>
-<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
+<p>App should be able to read saved data files transferred between computers.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Maintainability</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>App’s codebase should be easily understandable to a Software Developer with one year experience in Java.</p>
+</li>
+<li>
+<p>App’s codebase should be accessible and available for contribution via feedback and suggestions from
+external developers.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Performance</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>App should be able to hold up to 1000 tasks without a noticeable sluggishness in performance for typical usage.</p>
+</li>
+<li>
+<p>App should be able to process user input and return a response within 3 seconds.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Reliability</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>App should return an appropriate error or exception response and not crash when a user enters an invalid
+input command.</p>
+</li>
+<li>
+<p>App should return an appropriate error and not crash when it fails to process a user input command.</p>
+</li>
+<li>
+<p>App should inform the user in the event of an unexpected crash and potential loss of data.</p>
+</li>
+<li>
+<p>App should exhibit behaviour consistent with the User Guide’s specifications.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Usability</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be
+able to accomplish most of the tasks faster using commands than using the mouse.</p>
+</li>
+<li>
+<p>App first time startup process should have sufficient guidance for first time users to get started using the app
+with basic CRUD function.</p>
+</li>
+<li>
+<p>App should be useable without requiring internet connection (apart from downloading the file online).</p>
 </li>
 </ol>
 </div>
@@ -958,4 +1047,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-02-25 14:44:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-02-25 14:45:13 UTC</div></div></div></body></html>

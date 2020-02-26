@@ -861,23 +861,23 @@ achieve a result</p></td>
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>AddressBook</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
-<h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
+<h3 id="use-case-initialisation" class="discrete">Use case: Initialisation</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list persons</p>
+<p>NASA prompt user to key in modules taken during the semester on start-up.</p>
 </li>
 <li>
-<p>AddressBook shows a list of persons</p>
+<p>User enters modules taken eg. <code>add modules /m CS2103T CS2106 CS2101</code>.</p>
 </li>
 <li>
-<p>User requests to delete a specific person in the list</p>
+<p>NASA confirms and display the modules entered.</p>
 </li>
 <li>
-<p>AddressBook deletes the person</p>
+<p>User can start to use the command line.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -890,25 +890,625 @@ achieve a result</p></td>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>1a. Add nothing.</p>
+</li>
+<li>
+<p>1b. Add activities</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
+</ul>
+</div>
+<h3 id="use-case-add-deadlines" class="discrete">Use case: Add Deadlines</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>3a. The given index is invalid.</p>
+<p>User requests to add a deadline for a particular module.
+<code>deadline CS2103T /d 01-03-2019 23:59 /t Homework [/n This are the notes.]</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages.</p>
+</li>
+<li>
+<p>NASA will displays a list of all the items inside the modules</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>1a. No such modules.</p>
+</li>
+<li>
+<p>1b. Prompt user to add the modules not listed.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-add-event" class="discrete">Use case: Add Event</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add an event for a particular module.<br>
+<code>event CS2103T /d 01-03-2019 23:59 /t Project Work [/n This are the notes.]</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages.</p>
+</li>
+<li>
+<p>NASA will displays a list of all the items inside the modules</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. No such modules.</p>
+</li>
+<li>
+<p>1b. Prompt user to add the modules not listed.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-add-lesson" class="discrete">Use case: Add Lesson</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add an event for a particular module.<br>
+<code>lesson CS2103T /d 01-03-2019 23:59 /t Tutorial [/n This are the notes.]</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages.</p>
+</li>
+<li>
+<p>NASA will displays a list of all the items inside the modules</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. No such modules.</p>
+</li>
+<li>
+<p>1b. Prompt user to add the modules not listed.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-list" class="discrete">Use case: List</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list everything in a module by dates.<br>
+<code>list CS2103T /s date /ASC</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages</p>
+</li>
+<li>
+<p>NASA will display the module and it&#8217;s items.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. No such moduleID.</p>
+</li>
+<li>
+<p>1b. Prompt user to re-enter the correct moduleID.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-edit" class="discrete">Use case: Edit</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to change the date to 01-04-2019 and set priority to the lowest 5 for a tasksID=12 under the module CS2103T.<br>
+<code>edit CS2103T 12 /d 01-04-2019 23:59 /p 5</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages</p>
+</li>
+<li>
+<p>NASA will display the module and it&#8217;s items.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. No such moduleID.</p>
+</li>
+<li>
+<p>1b. Prompt user to re-enter the correct moduleID.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-delete" class="discrete">Use case: Delete</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete module CS2103T and CS2106.<br>
+<code>delete CS2103T CS2106</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages</p>
+</li>
+<li>
+<p>NASA will display remaining module.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. No such moduleID.</p>
+</li>
+<li>
+<p>1b. Prompt user to re-enter the correct moduleID.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-find" class="discrete">Use case: find</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to find all task that contains KEYWORD "homework".<br>
+<code>find /t homework</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages</p>
+</li>
+<li>
+<p>NASA will display all modules that has the tasks "homework".</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. No such KEYWORD in modules.</p>
+</li>
+<li>
+<p>1b. Prompt user to re-enter the correct KEYWORD.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-repeat" class="discrete">Use case: repeat</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to repeat all task under CS2103T every tuesday.<br>
+<code>repeat CS2103t /d 2</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages</p>
+</li>
+<li>
+<p>NASA will display all modules that has the tasks "homework".</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Nothing to repeat.</p>
+</li>
+<li>
+<p>1b. Prompt user to add tasks to modules.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-export" class="discrete">Use case: export</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to export all task to calendar.<br>
+<code>export</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages</p>
+</li>
+<li>
+<p>Calendar xml file will be opened to view.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. No modules added.</p>
+</li>
+<li>
+<p>1b. Prompt user to add modules and tasks.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-add-checklist" class="discrete">Use case: Add Checklist</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a checklist for a particular tasks.<br>
+<code>chadd 12 /n Prepare script</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages</p>
+</li>
+<li>
+<p>A checklist consisting of old and current added item will be displayed.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. No such tasksID.</p>
+</li>
+<li>
+<p>1b. Prompt user to add the tasks not listed.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-delete-checklist" class="discrete">Use case: Delete Checklist</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete a tasksID=12 under checklistID=2.<br>
+<code>chdel 12 2</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages</p>
+</li>
+<li>
+<p>A checklist consisting of old and current added item will be displayed.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. No such tasksID or checklistID.</p>
+</li>
+<li>
+<p>1b. Prompt user to add the tasks or checklist.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-edit-checklist" class="discrete">Use case: Edit Checklist</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to edit a tasksID=12 under checklistID=2.<br>
+<code>chedit 12 2 /n new notes messages here</code></p>
+</li>
+<li>
+<p>User requests to complete a tasksID=4 under checklistID=2.<br>
+<code>chedit 4 2 done</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages.</p>
+</li>
+<li>
+<p>A checklist consisting of old and current added item will be displayed.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. No such tasksID or checklistID.</p>
+</li>
+<li>
+<p>1b. Prompt user to add the tasks or checklist.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-clear" class="discrete">Use case: Clear</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to clear all tasks and checklist.<br>
+<code>clear</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages</p>
+</li>
+<li>
+<p>All modules will be emptied unless specified.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. User request to clear only specified modules.<br>
+<code>clear CS2103T CS2106</code></p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-quote" class="discrete">Use case: Quote</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to get a motivation quotes<br>
+<code>qoute</code></p>
+</li>
+<li>
+<p>NASA will provide a pop-up quote.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-alias" class="discrete">Use case: Alias</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to change command "clear" to "c"<br>
+<code>alias c clear</code></p>
+</li>
+<li>
+<p>NASA will provide acknowledgment message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Conflicting command keys. Prompt user to re-enter a new command key</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-password" class="discrete">Use case: Password</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to change to a new password<br>
+<code>changepassword oldpassword newpassword</code></p>
+</li>
+<li>
+<p>NASA will provide acknowledgment message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+<h3 id="use-case-exit" class="discrete">Use case: Exit</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to exit the program.<br>
+<code>exit</code></p>
+</li>
+<li>
+<p>NASA will provide a acknowledgement messages.</p>
+</li>
+<li>
+<p>User-interface will close.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
@@ -1188,4 +1788,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-02-26 11:59:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-02-26 12:57:30 UTC</div></div></div></body></html>

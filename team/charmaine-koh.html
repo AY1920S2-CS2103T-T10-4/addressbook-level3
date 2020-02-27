@@ -180,6 +180,37 @@ Deletes the the 2nd, 3rd and 4th task from the CS2030 module task-list.</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="deleting-a-module-code-mdelete-code"><a class="link" href="#deleting-a-module-code-mdelete-code">Deleting a module: <code>Mdelete</code></a></h3>
+<div class="paragraph">
+<p>Deletes a module along with its task-list.<br>
+Format: <code>Mdelete m/MODULE_CODE&#8230;&#8203;</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the module with MODULE_CODE and also its task-list</p>
+</li>
+<li>
+<p>MODULE_CODE must be an existing module</p>
+</li>
+<li>
+<p>Can add multiple MODULE_CODE to be deleted.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Mdelete m/CS2030 CS2040 CS1010</code><br>
+Deletes the respective modules associated with the MODULE_CODES.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
 <h3 id="adding-checklist-item-to-task-code-chadd-code-code-coming-in-v1-2-code"><a class="link" href="#adding-checklist-item-to-task-code-chadd-code-code-coming-in-v1-2-code">Adding checklist item to task: <code>chadd</code> <code>[coming in v1.2]</code></a></h3>
 <div class="paragraph">
 <p>Adds a checklist item into the specified module task<br>
@@ -207,10 +238,8 @@ Format: <code>chadd m/MODULE_CODE INDEX c/CHECKLIST_ITEM</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>chadd m/CS2101 12 c/Prepare script</code></p>
-</li>
-<li>
-<p>Adds checklist item "Prepare script" to task with INDEX 12 in module CS2101. The checklist item default status is undone.</p>
+<p><code>chadd m/CS2101 12 c/Prepare script</code><br>
+Adds checklist item "Prepare script" to task with INDEX 12 in module CS2101. The checklist item default status is undone.</p>
 </li>
 </ul>
 </div>
@@ -240,10 +269,8 @@ Format: <code>chdel m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>chdel m/CS2030 12 1</code></p>
-</li>
-<li>
-<p>Deletes checklist item with checklist ID 1 from task with INDEX 12 in the module (CS2030) list.</p>
+<p><code>chdel m/CS2030 12 1</code><br>
+Deletes checklist item with checklist ID 1 from task with INDEX 12 in the module (CS2030) list.</p>
 </li>
 </ul>
 </div>
@@ -251,7 +278,7 @@ Format: <code>chdel m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 <div class="sect2">
 <h3 id="set-checklist-item-in-task-to-done-code-chdone-code-code-coming-in-v1-2-code"><a class="link" href="#set-checklist-item-in-task-to-done-code-chdone-code-code-coming-in-v1-2-code">Set checklist item in task to done: <code>chdone</code> <code>[coming in v1.2]</code></a></h3>
 <div class="paragraph">
-<p>Sets a checklist item in a task in a specific module to done.
+<p>Sets a checklist item in a task in a specific module to done.<br>
 Format: <code>chdone m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 </div>
 <div class="ulist">
@@ -273,10 +300,8 @@ Format: <code>chdone m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>chdone m/CS2030 10 1</code></p>
-</li>
-<li>
-<p>Sets the checklist item with checklist ID 1 from task with INDEX 10 in CS2030 task-list to done.</p>
+<p><code>chdone m/CS2030 10 1</code><br>
+Sets the checklist item with checklist ID 1 from task with INDEX 10 in CS2030 task-list to done.</p>
 </li>
 </ul>
 </div>
@@ -284,7 +309,7 @@ Format: <code>chdone m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 <div class="sect2">
 <h3 id="set-checklist-item-in-task-to-undone-code-chundone-code-code-coming-in-v1-2-code"><a class="link" href="#set-checklist-item-in-task-to-undone-code-chundone-code-code-coming-in-v1-2-code">Set checklist item in task to undone: <code>chundone</code> <code>[coming in v1.2]</code></a></h3>
 <div class="paragraph">
-<p>Sets a checklist item in a task in a specific module to done.
+<p>Sets a checklist item in a task in a specific module to done.<br>
 Format: <code>chundone m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 </div>
 <div class="ulist">
@@ -306,10 +331,8 @@ Format: <code>chundone m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>chundone m/CS2030 10 1</code></p>
-</li>
-<li>
-<p>Sets the checklist item with checklist ID 1 from task with INDEX 10 in CS2030 task-list to not done.</p>
+<p><code>chundone m/CS2030 10 1</code><br>
+Sets the checklist item with checklist ID 1 from task with INDEX 10 in CS2030 task-list to not done.</p>
 </li>
 </ul>
 </div>
@@ -339,10 +362,8 @@ Format: <code>EPassword p/PASSWORD sq/SECURITY_QUESTION a/ANSWER</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>EPassword p/password s/favourite module? a/cs2103t</code></p>
-</li>
-<li>
-<p>Creates a password which must be correctly input to start programme. If user forgets password, security question will
+<p><code>EPassword p/password s/favourite module? a/cs2103t</code><br>
+Creates a password which must be correctly input to start programme. If user forgets password, security question will
 be used to verify.</p>
 </li>
 </ul>
@@ -367,10 +388,8 @@ Format: <code>CPassword cp/CURRENTPASSWORD np/NEWPASSWORD</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>CPassword cp/currentpassword np/newpassword</code></p>
-</li>
-<li>
-<p>Changes password from "currentpassword" to "newpassword".</p>
+<p><code>CPassword cp/currentpassword np/newpassword</code><br>
+Changes password from "currentpassword" to "newpassword".</p>
 </li>
 </ul>
 </div>
@@ -394,10 +413,8 @@ Format: <code>CSecurityQ cq/CURRENT_SECURITY_QUESTION ca/CURRENT_ANSWER nq/NEW_S
 <div class="ulist">
 <ul>
 <li>
-<p><code>CSecurityQ cq/current question ca/current answer nq/new question na/new password</code></p>
-</li>
-<li>
-<p>Changes security question to new security question.</p>
+<p><code>CSecurityQ cq/current question ca/current answer nq/new question na/new password</code><br>
+Changes security question to new security question.</p>
 </li>
 </ul>
 </div>
@@ -430,10 +447,8 @@ Format: <code>shortcut s/SHORTCUT c/COMMAND</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>shortcut s/l c/list</code></p>
-</li>
-<li>
-<p>Adds a shortcut "l" to command list. "l" can now be used in place of list.</p>
+<p><code>shortcut s/l c/list</code><br>
+Adds a shortcut "l" to command list. "l" can now be used in place of list.</p>
 </li>
 </ul>
 </div>
@@ -463,10 +478,8 @@ Format: <code>statistics [tp/TIME_PERIOD]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>statistics tp/WEEK</code></p>
-</li>
-<li>
-<p>Displays tasks completed over this week.</p>
+<p><code>statistics tp/WEEK</code><br>
+Displays tasks completed over this week.</p>
 </li>
 </ul>
 </div>
@@ -474,7 +487,7 @@ Format: <code>statistics [tp/TIME_PERIOD]</code></p>
 <div class="sect2">
 <h3 id="export-to-calendar-code-export-code-code-coming-in-v1-2-code"><a class="link" href="#export-to-calendar-code-export-code-code-coming-in-v1-2-code">Export to calendar <code>export</code> <code>[coming in v1.2]</code></a></h3>
 <div class="paragraph">
-<p>Exports all module task-lists onto a calendar (.ics format) for users.
+<p>Exports all module task-lists onto a calendar (.ics format) for users.<br>
 Format: <code>export</code></p>
 </div>
 <div class="paragraph">
@@ -744,4 +757,4 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-02-27 02:41:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-02-27 06:53:04 UTC</div></div></div></body></html>

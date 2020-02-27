@@ -315,6 +315,163 @@ Format: <code>chundone m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="enabling-passwords-code-epassword-code-code-coming-in-v1-2-code"><a class="link" href="#enabling-passwords-code-epassword-code-code-coming-in-v1-2-code">Enabling passwords: <code>EPassword</code> <code>[coming in v1.2]</code></a></h3>
+<div class="paragraph">
+<p>Creates a password that will be requested when the programme is restarted.<br>
+Format: <code>EPassword p/PASSWORD sq/SECURITY_QUESTION a/ANSWER</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Creates a <code>PASSWORD</code> to enable access into the programme.</p>
+</li>
+<li>
+<p>Must add a <code>SECURITY_QUESTION</code> for verification should user forget password.</p>
+</li>
+<li>
+<p><code>ANSWER</code> should be the answer to <code>SECURITY_QUESTION</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>EPassword p/password s/favourite module? a/cs2103t</code></p>
+</li>
+<li>
+<p>Creates a password which must be correctly input to start programme. If user forgets password, security question will
+be used to verify.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="changing-passwords-code-cpassword-code-code-coming-in-v1-2-code"><a class="link" href="#changing-passwords-code-cpassword-code-code-coming-in-v1-2-code">Changing passwords: <code>CPassword</code> <code>[coming in v1.2]</code></a></h3>
+<div class="paragraph">
+<p>Changes existing password to new password.<br>
+Format: <code>CPassword cp/CURRENTPASSWORD np/NEWPASSWORD</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Changes existing password from <code>CURRENT PASSWORD</code> to <code>NEW PASSWORD</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>CPassword cp/currentpassword np/newpassword</code></p>
+</li>
+<li>
+<p>Changes password from "currentpassword" to "newpassword".</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="changing-security-questions-code-csecurityq-code-code-coming-in-v1-2-code"><a class="link" href="#changing-security-questions-code-csecurityq-code-code-coming-in-v1-2-code">Changing security questions: <code>CSecurityQ</code> <code>[coming in v1.2]</code></a></h3>
+<div class="paragraph">
+<p>Changes existing security question to new security question.<br>
+Format: <code>CSecurityQ cq/CURRENT_SECURITY_QUESTION ca/CURRENT_ANSWER nq/NEW_SECURITY_QUESTION na/NEW_ANSWER</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Changes existing security question from <code>CURRENT_SECURITY_QUESTION</code> to <code>NEW_SECURITY_QUESTION</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>CSecurityQ cq/current question ca/current answer nq/new question na/new password</code></p>
+</li>
+<li>
+<p>Changes security question to new security question.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-shortcuts-code-shortcut-code-code-coming-in-v1-2-code"><a class="link" href="#creating-shortcuts-code-shortcut-code-code-coming-in-v1-2-code">Creating shortcuts: <code>shortcut</code> <code>[coming in v1.2]</code></a></h3>
+<div class="paragraph">
+<p>Creates a shortcut for specified task.<br>
+Format: <code>shortcut s/SHORTCUT c/COMMAND</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Creates a <code>SHORTCUT</code> to the specified <code>COMMAND</code>.</p>
+</li>
+<li>
+<p>Can only add <code>SHORTCUT</code> to an existing <code>COMMAND</code>.</p>
+</li>
+<li>
+<p>Can add multiple <code>SHORTCUT</code> for a specific <code>COMMAND</code>.</p>
+</li>
+<li>
+<p>A <code>SHORTCUT</code> will be generated that is unique for a <code>COMMAND</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>shortcut s/l c/list</code></p>
+</li>
+<li>
+<p>Adds a shortcut "l" to command list. "l" can now be used in place of list.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="generating-statistics-code-statistics-code-code-coming-in-v1-2-code"><a class="link" href="#generating-statistics-code-statistics-code-code-coming-in-v1-2-code">Generating statistics: <code>statistics</code> <code>[coming in v1.2]</code></a></h3>
+<div class="paragraph">
+<p>Displays statistics of tasks completed.<br>
+Format: <code>statistics [tp/TIME_PERIOD]</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Displays statistics on tasks completed.</p>
+</li>
+<li>
+<p>By default, displays progression of all completed tasks.</p>
+</li>
+<li>
+<p>Can add <code>TIME_PERIOD</code> of week, month and year to see tasks specific to that time period.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>statistics tp/WEEK</code></p>
+</li>
+<li>
+<p>Displays tasks completed over this week.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
 <h3 id="export-to-calendar-code-export-code-code-coming-in-v1-2-code"><a class="link" href="#export-to-calendar-code-export-code-code-coming-in-v1-2-code">Export to calendar <code>export</code> <code>[coming in v1.2]</code></a></h3>
 <div class="paragraph">
 <p>Exports all module task-lists onto a calendar (.ics format) for users.
@@ -587,4 +744,4 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-02-26 13:23:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-02-27 02:41:04 UTC</div></div></div></body></html>

@@ -137,9 +137,9 @@
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="deleting-a-task-code-delete-code"><a class="link" href="#deleting-a-task-code-delete-code">Deleting a task : <code>delete</code></a></h3>
+<h3 id="deleting-a-activity-code-delete-code"><a class="link" href="#deleting-a-activity-code-delete-code">Deleting a activity : <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified task from module task-list.<br>
+<p>Deletes the specified activity from module activity-list.<br>
 Format: <code>delete m/MODULE_CODE INDEX&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
@@ -147,10 +147,10 @@ Format: <code>delete m/MODULE_CODE INDEX&#8230;&#8203;</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the task at the specified <code>INDEX</code> in the specified <code>MODULE_CODE</code>.</p>
+<p>Deletes the activity at the specified <code>INDEX</code> in the specified <code>MODULE_CODE</code>.</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the task-list.</p>
+<p>The index refers to the index number shown in the activity-list.</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
@@ -170,11 +170,11 @@ Format: <code>delete m/MODULE_CODE INDEX&#8230;&#8203;</code></p>
 <li>
 <p><code>list</code><br>
 <code>delete m/CS2030 2</code><br>
-Deletes the 2nd task in the CS2030 module task-list.</p>
+Deletes the 2nd activity in the CS2030 module activity-list.</p>
 </li>
 <li>
 <p><code>delete m/CS2030 2 3 4</code><br>
-Deletes the the 2nd, 3rd and 4th task from the CS2030 module task-list.</p>
+Deletes the the 2nd, 3rd and 4th activity from the CS2030 module activity-list.</p>
 </li>
 </ul>
 </div>
@@ -182,13 +182,13 @@ Deletes the the 2nd, 3rd and 4th task from the CS2030 module task-list.</p>
 <div class="sect2">
 <h3 id="deleting-a-module-code-mdelete-code"><a class="link" href="#deleting-a-module-code-mdelete-code">Deleting a module: <code>Mdelete</code></a></h3>
 <div class="paragraph">
-<p>Deletes a module along with its task-list.<br>
+<p>Deletes a module along with its activity-list.<br>
 Format: <code>Mdelete m/MODULE_CODE&#8230;&#8203;</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the module with MODULE_CODE and also its task-list</p>
+<p>Deletes the module with MODULE_CODE and also its activity-list</p>
 </li>
 <li>
 <p>MODULE_CODE must be an existing module</p>
@@ -211,24 +211,24 @@ Deletes the respective modules associated with the MODULE_CODES.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-checklist-item-to-task-code-chadd-code-code-coming-in-v1-2-code"><a class="link" href="#adding-checklist-item-to-task-code-chadd-code-code-coming-in-v1-2-code">Adding checklist item to task: <code>chadd</code> <code>[coming in v1.2]</code></a></h3>
+<h3 id="adding-checklist-item-to-activity-code-chadd-code-code-coming-in-v1-2-code"><a class="link" href="#adding-checklist-item-to-activity-code-chadd-code-code-coming-in-v1-2-code">Adding checklist item to activity: <code>chadd</code> <code>[coming in v1.2]</code></a></h3>
 <div class="paragraph">
-<p>Adds a checklist item into the specified module task<br>
+<p>Adds a checklist item into the specified module activity<br>
 Format: <code>chadd m/MODULE_CODE INDEX c/CHECKLIST_ITEM</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Adds checklist item <code>CHECKLIST_ITEM</code> to the task in the module (MODULE_CODE) identified by task number INDEX.</p>
+<p>Adds checklist item <code>CHECKLIST_ITEM</code> to the activity in the module (MODULE_CODE) identified by activity number INDEX.</p>
 </li>
 <li>
-<p>Can only add <code>CHECKLIST_ITEM</code> to an existing task (ie. <code>INDEX</code> must exist in the module task list).</p>
+<p>Can only add <code>CHECKLIST_ITEM</code> to an existing activity (ie. <code>INDEX</code> must exist in the module activity list).</p>
 </li>
 <li>
 <p>Can only add to an existing module (ie. <code>MODULE_CODE</code> must exist).</p>
 </li>
 <li>
-<p>A <code>CHECKLIST_ID</code> will be generated that is unique WITHIN each task.</p>
+<p>A <code>CHECKLIST_ID</code> will be generated that is unique WITHIN each activity.</p>
 </li>
 </ul>
 </div>
@@ -239,24 +239,24 @@ Format: <code>chadd m/MODULE_CODE INDEX c/CHECKLIST_ITEM</code></p>
 <ul>
 <li>
 <p><code>chadd m/CS2101 12 c/Prepare script</code><br>
-Adds checklist item "Prepare script" to task with INDEX 12 in module CS2101. The checklist item default status is undone.</p>
+Adds checklist item "Prepare script" to activity with INDEX 12 in module CS2101. The checklist item default status is undone.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="delete-checklist-item-from-task-code-chdel-code-code-coming-in-v1-2-code"><a class="link" href="#delete-checklist-item-from-task-code-chdel-code-code-coming-in-v1-2-code">Delete checklist item from task: <code>chdel</code> <code>[coming in v1.2]</code></a></h3>
+<h3 id="delete-checklist-item-from-activity-code-chdel-code-code-coming-in-v1-2-code"><a class="link" href="#delete-checklist-item-from-activity-code-chdel-code-code-coming-in-v1-2-code">Delete checklist item from activity: <code>chdel</code> <code>[coming in v1.2]</code></a></h3>
 <div class="paragraph">
-<p>Deletes a checklist item from an existing task.<br>
+<p>Deletes a checklist item from an existing activity.<br>
 Format: <code>chdel m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the checklist item identified by <code>CHECKLIST_ID</code> from the task identified by <code>INDEX</code> in module <code>MODULE_CODE</code>.</p>
+<p>Deletes the checklist item identified by <code>CHECKLIST_ID</code> from the activity identified by <code>INDEX</code> in module <code>MODULE_CODE</code>.</p>
 </li>
 <li>
-<p>Can only delete an existing checklist item from an existing task (ie. <code>INDEX</code> and its respective <code>CHECKLIST_ID</code> must exist in the module task list).</p>
+<p>Can only delete an existing checklist item from an existing activity (ie. <code>INDEX</code> and its respective <code>CHECKLIST_ID</code> must exist in the module activity list).</p>
 </li>
 <li>
 <p>In addition, the MODULE_CODE must exist.</p>
@@ -270,24 +270,24 @@ Format: <code>chdel m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 <ul>
 <li>
 <p><code>chdel m/CS2030 12 1</code><br>
-Deletes checklist item with checklist ID 1 from task with INDEX 12 in the module (CS2030) list.</p>
+Deletes checklist item with checklist ID 1 from activity with INDEX 12 in the module (CS2030) list.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="set-checklist-item-in-task-to-done-code-chdone-code-code-coming-in-v1-2-code"><a class="link" href="#set-checklist-item-in-task-to-done-code-chdone-code-code-coming-in-v1-2-code">Set checklist item in task to done: <code>chdone</code> <code>[coming in v1.2]</code></a></h3>
+<h3 id="set-checklist-item-in-activity-to-done-code-chdone-code-code-coming-in-v1-2-code"><a class="link" href="#set-checklist-item-in-activity-to-done-code-chdone-code-code-coming-in-v1-2-code">Set checklist item in activity to done: <code>chdone</code> <code>[coming in v1.2]</code></a></h3>
 <div class="paragraph">
-<p>Sets a checklist item in a task in a specific module to done.<br>
+<p>Sets a checklist item in a activity in a specific module to done.<br>
 Format: <code>chdone m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Sets the checklist item identified by <code>CHECKLIST_ID</code> from the task with INDEX in MODULE_CODE task-list to done.</p>
+<p>Sets the checklist item identified by <code>CHECKLIST_ID</code> from the activity with INDEX in MODULE_CODE activity-list to done.</p>
 </li>
 <li>
-<p>INDEX and CHECKLIST_ID must exist in the module task-list.</p>
+<p>INDEX and CHECKLIST_ID must exist in the module activity-list.</p>
 </li>
 <li>
 <p>MODULE_CODE must also exist in the application.</p>
@@ -301,24 +301,24 @@ Format: <code>chdone m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 <ul>
 <li>
 <p><code>chdone m/CS2030 10 1</code><br>
-Sets the checklist item with checklist ID 1 from task with INDEX 10 in CS2030 task-list to done.</p>
+Sets the checklist item with checklist ID 1 from activity with INDEX 10 in CS2030 activity-list to done.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="set-checklist-item-in-task-to-undone-code-chundone-code-code-coming-in-v1-2-code"><a class="link" href="#set-checklist-item-in-task-to-undone-code-chundone-code-code-coming-in-v1-2-code">Set checklist item in task to undone: <code>chundone</code> <code>[coming in v1.2]</code></a></h3>
+<h3 id="set-checklist-item-in-activity-to-undone-code-chundone-code-code-coming-in-v1-2-code"><a class="link" href="#set-checklist-item-in-activity-to-undone-code-chundone-code-code-coming-in-v1-2-code">Set checklist item in activity to undone: <code>chundone</code> <code>[coming in v1.2]</code></a></h3>
 <div class="paragraph">
-<p>Sets a checklist item in a task in a specific module to done.<br>
+<p>Sets a checklist item in a activity in a specific module to done.<br>
 Format: <code>chundone m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Sets the checklist item identified by <code>CHECKLIST_ID</code> from the task with INDEX in MODULE_CODE task-list to not done.</p>
+<p>Sets the checklist item identified by <code>CHECKLIST_ID</code> from the activity with INDEX in MODULE_CODE activity-list to not done.</p>
 </li>
 <li>
-<p>INDEX and CHECKLIST_ID must exist in the module task-list.</p>
+<p>INDEX and CHECKLIST_ID must exist in the module activity-list.</p>
 </li>
 <li>
 <p>MODULE_CODE must also exist in the application.</p>
@@ -332,7 +332,7 @@ Format: <code>chundone m/MODULE_CODE INDEX CHECKLIST_ID</code></p>
 <ul>
 <li>
 <p><code>chundone m/CS2030 10 1</code><br>
-Sets the checklist item with checklist ID 1 from task with INDEX 10 in CS2030 task-list to not done.</p>
+Sets the checklist item with checklist ID 1 from activity with INDEX 10 in CS2030 activity-list to not done.</p>
 </li>
 </ul>
 </div>
@@ -422,7 +422,7 @@ Changes security question to new security question.</p>
 <div class="sect2">
 <h3 id="creating-shortcuts-code-shortcut-code-code-coming-in-v1-2-code"><a class="link" href="#creating-shortcuts-code-shortcut-code-code-coming-in-v1-2-code">Creating shortcuts: <code>shortcut</code> <code>[coming in v1.2]</code></a></h3>
 <div class="paragraph">
-<p>Creates a shortcut for specified task.<br>
+<p>Creates a shortcut for specified activity.<br>
 Format: <code>shortcut s/SHORTCUT c/COMMAND</code></p>
 </div>
 <div class="ulist">
@@ -456,19 +456,19 @@ Adds a shortcut "l" to command list. "l" can now be used in place of list.</p>
 <div class="sect2">
 <h3 id="generating-statistics-code-statistics-code-code-coming-in-v1-2-code"><a class="link" href="#generating-statistics-code-statistics-code-code-coming-in-v1-2-code">Generating statistics: <code>statistics</code> <code>[coming in v1.2]</code></a></h3>
 <div class="paragraph">
-<p>Displays statistics of tasks completed.<br>
+<p>Displays statistics of activities completed.<br>
 Format: <code>statistics [tp/TIME_PERIOD]</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Displays statistics on tasks completed.</p>
+<p>Displays statistics on activities completed.</p>
 </li>
 <li>
-<p>By default, displays progression of all completed tasks.</p>
+<p>By default, displays progression of all completed activities.</p>
 </li>
 <li>
-<p>Can add <code>TIME_PERIOD</code> of week, month and year to see tasks specific to that time period.</p>
+<p>Can add <code>TIME_PERIOD</code> of week, month and year to see activities specific to that time period.</p>
 </li>
 </ul>
 </div>
@@ -479,7 +479,7 @@ Format: <code>statistics [tp/TIME_PERIOD]</code></p>
 <ul>
 <li>
 <p><code>statistics tp/WEEK</code><br>
-Displays tasks completed over this week.</p>
+Displays activities completed over this week.</p>
 </li>
 </ul>
 </div>
@@ -487,7 +487,7 @@ Displays tasks completed over this week.</p>
 <div class="sect2">
 <h3 id="export-to-calendar-code-export-code-code-coming-in-v1-2-code"><a class="link" href="#export-to-calendar-code-export-code-code-coming-in-v1-2-code">Export to calendar <code>export</code> <code>[coming in v1.2]</code></a></h3>
 <div class="paragraph">
-<p>Exports all module task-lists onto a calendar (.ics format) for users.<br>
+<p>Exports all module activity-lists onto a calendar (.ics format) for users.<br>
 Format: <code>export</code></p>
 </div>
 <div class="paragraph">
@@ -501,7 +501,7 @@ Format: <code>export</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Tasks are listed as calendar events as shown. Full design not confirmed, image courtesy of [<a href="https://www.knack.com/templates/event-calendar">knack</a>]</p>
+<p>Activities are listed as calendar events as shown. Full design not confirmed, image courtesy of [<a href="https://www.knack.com/templates/event-calendar">knack</a>]</p>
 </li>
 </ul>
 </div>
@@ -757,4 +757,4 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-01 15:49:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 07:05:19 UTC</div></div></div></body></html>

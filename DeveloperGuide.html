@@ -27,11 +27,10 @@
 <li><a href="#add-reminder-feature">3.3. Add Reminder Feature</a></li>
 <li><a href="#snooze-reminder-feature">3.4. Snooze Reminder Feature</a></li>
 <li><a href="#automation">3.5. Automation</a></li>
-<li><a href="#sort-activity-feature-to-be-implemented">3.6. Sort Activity Feature (To be implemented)</a></li>
-<li><a href="#statistics-feature-to-be-implemented">3.7. Statistics Feature (To be implemented)</a></li>
-<li><a href="#chat-bot-feature-to-be-implemented">3.8. Chat bot Feature (To be implemented)</a></li>
-<li><a href="#logging">3.9. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.10. Configuration</a></li>
+<li><a href="#sort-activity-feature">3.6. Sort Activity Feature</a></li>
+<li><a href="#statistics-feature">3.7. Statistics Feature</a></li>
+<li><a href="#logging">3.8. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.9. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -165,13 +164,14 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues
+the command <code>mdelete m/CS2103T</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
 </div>
-<div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
+<div class="title">Figure 3. Component interactions for <code>mdelete m/CS2103T</code> command</div>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
@@ -189,11 +189,14 @@ The following class plays an important role at the architecture level:</p>
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/src/main/java/nasa/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>ChatBox</code>, <code>ModuleListPanel</code>,
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>HelpWindow</code>, <code>TabPanel</code>,
 <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that
+are in the <code>src/main/resources/view</code> folder. For example, the layout of the
+<a href="https://github.com/AY1920S2-CS2103T-T10-4/main/src/main/java/seedu/Nasa/ui/MainWindow.java"><code>MainWindow</code></a> is specified in
+<a href="https://github.com/AY1920S2-CS2103T-T10-4/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -247,7 +250,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>mdelete m/CS2103T</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -343,32 +346,33 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="sect3">
 <h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.1.1. Proposed Implementation</a></h4>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>NasaBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and
+<p>The undo/redo mechanism is facilitated by <code>VersionedNasaBook</code>.
+It extends <code>NasaBook</code> with an undo/redo history, stored internally as an <code>NasaBookStateList</code> and
 <code>currentStatePointer</code>.
 Additionally, it implements the following operations:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current NASA book state in its history.</p>
+<p><code>VersionedNasaBook#commit()</code>&#8201;&#8212;&#8201;Saves the current NASA book state in its history.</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous NASA book state from its history.</p>
+<p><code>VersionedNasaBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous NASA book state from its history.</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone NASA book state from its history.</p>
+<p><code>VersionedNasaBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone NASA book state from its history.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
+<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitNasaBook()</code>, <code>Model#undoNasaBook()</code> and
+<code>Model#redoNasaBook()</code> respectively.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the
+<p>Step 1. The user launches the application for the first time. The <code>VersionedNasaBook</code> will be initialized with the
 initial NASA book state, and the <code>currentStatePointer</code> pointing to that single NASA book state.</p>
 </div>
 <div class="imageblock">
@@ -378,7 +382,7 @@ initial NASA book state, and the <code>currentStatePointer</code> pointing to th
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>delete 5</code> command to delete the 5th module in the NASA book. The <code>delete</code> command calls
-<code>Model#commitAddressBook()</code>, causing the modified state of the NASA book after the <code>delete 5</code> command executes to be
+<code>Model#commitNasaBook()</code>, causing the modified state of the NASA book after the <code>delete 5</code> command executes to be
 saved</p>
 </div>
 <div class="paragraph">
@@ -390,7 +394,7 @@ saved</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new module. The <code>add</code> command also calls <code>Model#commitAddressBook()
+<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new module. The <code>add</code> command also calls <code>Model#commitNasaBook()
 `, causing another modified NASA book state to be saved into the `NASABookStateList</code>.</p>
 </div>
 <div class="imageblock">
@@ -405,7 +409,7 @@ saved</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the NASA book state will not be saved
+If a command fails its execution, it will not call <code>Model#commitNasaBook()</code>, so the NASA book state will not be saved
 </td>
 </tr>
 </table>
@@ -415,7 +419,7 @@ If a command fails its execution, it will not call <code>Model#commitAddressBook
 </div>
 <div class="paragraph">
 <p>Step 4. The user now decides that adding the module was a mistake, and decides to undo that action by executing the
-<code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once
+<code>undo</code> command. The <code>undo</code> command will call <code>Model#undoNasaBook()</code>, which will shift the <code>currentStatePointer</code> once
 to the left, pointing it to the previous NASA book state, and restores the NASA book to that state.</p>
 </div>
 <div class="imageblock">
@@ -432,7 +436,8 @@ to the left, pointing it to the previous NASA book state, and restores the NASA 
 <td class="content">
 If the <code>currentStatePointer</code> is at index 0, pointing to the initial NASA book state, then there are no previous NASA
 book
-states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
+states to restore. The <code>undo</code> command uses <code>Model#canUndoNasaBook()</code> to check if this is the case. If so, it will return
+an error to the user rather than attempting to perform the undo.
 </td>
 </tr>
 </table>
@@ -458,7 +463,7 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once
+<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoNasaBook()</code>, which shifts the <code>currentStatePointer</code> once
 to the right, pointing to the previously undone state, and restores the NASA book to that state.</p>
 </div>
 <div class="admonitionblock note">
@@ -470,7 +475,7 @@ to the right, pointing to the previously undone state, and restores the NASA boo
 <td class="content">
 If the <code>currentStatePointer</code> is at index <code>NASABookStateList.size() - 1</code>, pointing to the latest NASA book state, then
 there
-are no undone NASA book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the
+are no undone NASA book states to restore. The <code>redo</code> command uses <code>Model#canRedoNasaBook()</code> to check if this is the
 case. If so, it will return an error to the user rather than attempting to perform the redo.
 </td>
 </tr>
@@ -478,7 +483,7 @@ case. If so, it will return an error to the user rather than attempting to perfo
 </div>
 <div class="paragraph">
 <p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the NASA book, such as <code>list</code>,
-will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the
+will usually not call <code>Model#commitNasaBook()</code>, <code>Model#undoNasaBook()</code> or <code>Model#redoNasaBook()</code>. Thus, the
 <code>NASABookStateList</code> remains unchanged.</p>
 </div>
 <div class="imageblock">
@@ -487,7 +492,7 @@ will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAd
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitNasaBook()</code>. Since the <code>currentStatePointer</code> is not
 pointing at the end of the <code>NASABookStateList</code>, all NASA book states after the <code>currentStatePointer</code> will be purged. We
 designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
 </div>
@@ -552,7 +557,8 @@ designed it this way because it no longer makes sense to redo the <code>add n/Da
 <p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
 </li>
 <li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
+<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both
+<code>HistoryManager</code> and <code>VersionedNasaBook</code>.</p>
 </li>
 </ul>
 </div>
@@ -840,7 +846,7 @@ the user initialise the program again, the system will automatically reset the e
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-activity-feature-to-be-implemented"><a class="link" href="#sort-activity-feature-to-be-implemented">3.6. Sort Activity Feature (To be implemented)</a></h3>
+<h3 id="sort-activity-feature"><a class="link" href="#sort-activity-feature">3.6. Sort Activity Feature</a></h3>
 <div class="paragraph">
 <p>Activities (ie. deadlines, lessons and events) are sorted by a specific criteria, such as date added or priority.
 By default, activities are sorted by date added.</p>
@@ -956,7 +962,7 @@ performance, and affect responsiveness of application when there are many entrie
 </div>
 </div>
 <div class="sect2">
-<h3 id="statistics-feature-to-be-implemented"><a class="link" href="#statistics-feature-to-be-implemented">3.7. Statistics Feature (To be implemented)</a></h3>
+<h3 id="statistics-feature"><a class="link" href="#statistics-feature">3.7. Statistics Feature</a></h3>
 <div class="paragraph">
 <p>Statistics on the status of activities based on a specific criteria such as time period is shown. By default, the
 overall statistics for all activities are shown.</p>
@@ -982,7 +988,7 @@ overall statistics for all activities are shown.</p>
 </div>
 <div class="paragraph">
 <p>Refer to the user guide for the specific commands. Generating statistics is facilitated by
-ModelManager#calculateStatistics.</p>
+ModelManager#statistics.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation-5"><a class="link" href="#implementation-5">3.7.1. Implementation</a></h4>
@@ -1015,53 +1021,21 @@ current status for each module over the past week.</p>
 </li>
 </ol>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="chat-bot-feature-to-be-implemented"><a class="link" href="#chat-bot-feature-to-be-implemented">3.8. Chat bot Feature (To be implemented)</a></h3>
 <div class="paragraph">
-<p>The CLI implementation is done through a chat bot like interface through a redesign of the user interface.</p>
-</div>
-<div class="sect3">
-<h4 id="implementation-6"><a class="link" href="#implementation-6">3.8.1. Implementation</a></h4>
-<div class="paragraph">
-<p>The user interface is split into 2 sections where commands will be keyed into the chat box on the left side. Feedback
-from the programme on the result of the command will be displayed directly by the chat bot where the command history
-can be viewed. Changes made to the model will be updated in the user interface on the right side</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="internal-workings-for-the-chat-bot"><a class="link" href="#internal-workings-for-the-chat-bot">3.8.2. Internal workings for the chat bot</a></h4>
-<div class="paragraph">
-<p>Below is an example of a user requesting for statistics by for the week and how the underlying system works.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The user enters a command <code>statistics</code></p>
-</li>
-<li>
-<p>The NASA application will process the command. (Refer to section 3.8 for details)</p>
-</li>
-<li>
-<p>Command result generated by the logic manager is returned and displayed in the chat bot.</p>
-</li>
-<li>
-<p>User interface switches tabs to the statistics tab where the overall statistics are displayed.</p>
-</li>
-</ol>
+<p>The figure below shows the sequence diagram on what happens with the execution of the aforementioned command.
+image::StatisticsLogicSequenceDiagram.png[]</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.9. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.8. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.10, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.9, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1092,7 +1066,7 @@ can be viewed. Changes made to the model will be updated in the user interface o
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.10. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.9. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2534,4 +2508,4 @@ Expected: Activity being edited already contains the following descriptions erro
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-03 07:23:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-04 00:10:19 UTC</div></div></div></body></html>

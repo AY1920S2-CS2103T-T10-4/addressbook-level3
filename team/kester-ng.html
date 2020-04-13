@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Ng Yi Long, Kester - Project Portfolio</h1></div><div id="content"><div class="sect1">
 <h2 id="project-nice-and-amazing-student-assistant-nasa"><a class="link" href="#project-nice-and-amazing-student-assistant-nasa">PROJECT: Nice and Amazing Student Assistant (NASA)</a></h2>
 <div class="sectionbody">
-<hr>
+
 </div>
 </div>
 <div class="sect1">
@@ -16,34 +16,75 @@ assignments, lessons, exams and consultations etc.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="code-contribution"><a class="link" href="#code-contribution">Code Contribution</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Click on the following link to see the code contributed to the project on RepoSENSE.<br>
+<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=kester-ng&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Code Contribution</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+<p><strong>Major Enhancement</strong>: Added Calendar view for activities.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p>What it does: Allows users to see their activities displayed onto a calendar.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+<p>Justification: This feature allows users to be able to see upcoming activities for upcoming week etc which allows them to better plan their schedule.</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
+<p>Highlights: The calendar Ui and view was created from scratch. There are many challenges involved in this enhancement:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Populating the calendar grids with the correct dates were difficult as there were many conditions to take note of, examples include what day does the month start, is it leap year this year etc.</p>
 </li>
 <li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Populating the grids with the deadlines was not very difficult. But events was very difficult. As events can span from start date to end date, making sure the events are populated on the calendar during this time interval was very tedious as there are many conditions to take note of.</p>
+</li>
+<li>
+<p>Syncing with the user input was also not very easy, given our model structure. Adding event-listeners had to be done in a proper way to ensure the calendar syncs with the current state of the application.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p><strong>Major enhancement</strong>: added the ability for users to export the calendar onto a .ics file for portability</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows users to export the current calendar in the application onto a .ics file for use in other calendar applications.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Justification: While the calendar view is useful, there are certain dedicated calendar applications with more features. And hence being able to export the calendar view to their favourite calendar app will make user experience better. In addition, it is more convenient as it allows the calendar to be viewed on multiple devices and platforms or shared among others.</p>
+</li>
+<li>
+<p>Highlights: The following enhancement was also very challenging. Understanding the format and how to write .ics file was not easy. Secondly, writing the logic on how deadline and events are to be displayed took a bit of thinking. Lastly, being able to have auto-rescheduling of events/deadlines also required quite a bit of effort as well.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Updated list command to be able to filter based on modules.</p>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Updated the find command.</p>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Added all the CRUD functionality for the application.</p>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Added a refresh command that allows users to refresh to update the UI statuses.</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -54,7 +95,7 @@ assignments, lessons, exams and consultations etc.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>Managed releases <code>v1.3</code> on GitHub</p>
 </li>
 </ul>
 </div>
@@ -64,10 +105,16 @@ assignments, lessons, exams and consultations etc.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+<p>Fixed GUI display of calendar not syncing properly with the tab/command box. (Pull Requests <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/272">#272</a>)</p>
 </li>
 <li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Fixed bugs related to model, commands and UI. (Pull Requests <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/262">#262</a>, <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/256">#256</a>, <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/163">#163</a>, <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/146">#146</a>, <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/132">#132</a>)</p>
+</li>
+<li>
+<p>Added logic for commands, parsers and JUNIT tests for them. (Pull Requests <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/246">#246</a>, <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/178">#178</a>, <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/100">#100</a>, <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/94">#94</a>)</p>
+</li>
+<li>
+<p>Refactored the whole code base. (Pull Requests <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/246">#246</a>, <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/90">#90</a>)</p>
 </li>
 </ul>
 </div>
@@ -77,7 +124,16 @@ assignments, lessons, exams and consultations etc.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Updated basic command usage, test cases for DG and updated images for UG and DG. (Pull Requests <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/22">#22</a>, <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/65/files">#65</a>, <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/168">#168</a>)</p>
+</li>
+<li>
+<p>Updated DG with proper UML diagrams. (Pull Request <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/151">#151</a>)</p>
+</li>
+<li>
+<p>UML diagrams for DG includes the adding deadline, export calendar and reminder features.</p>
+</li>
+<li>
+<p>Updated UG commands for adding activities, find, list, delete activities, calendar and reminder features.</p>
 </li>
 </ul>
 </div>
@@ -87,16 +143,10 @@ assignments, lessons, exams and consultations etc.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>PRs reviewed (with non-trivial comments): <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/263">#263</a>, <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/89">#89</a>, <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/77">#77</a>, <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/pull/142">#142</a></p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
+<p>Reported bugs for teammates (Example: <a href="https://github.com/AY1920S2-CS2103T-T10-4/main/issues/249">#249</a>)</p>
 </li>
 </ul>
 </div>
@@ -106,10 +156,7 @@ assignments, lessons, exams and consultations etc.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Integrated travis, appveyor, coverage/coveralls, codeacy into project.</p>
 </li>
 </ul>
 </div>
@@ -138,208 +185,112 @@ assignments, lessons, exams and consultations etc.</p>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="deleting-a-activity-code-delete-code"><a class="link" href="#deleting-a-activity-code-delete-code">Deleting a activity : <code>delete</code></a></h3>
+<h3 id="calendar-view"><a class="link" href="#calendar-view">Calendar View:</a></h3>
 <div class="paragraph">
-<p>Deletes the specified activity from module activity-list.<br>
-Format: <code>delete INDEX m/MODULE_CODE</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the activity at the specified <code>INDEX</code> in the specified <code>MODULE_CODE</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the activity-list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
+<p><code>Contributed by: kester-ng</code><br>
+Allows the user to see the activities onto a calendar.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>delete m/CS2030 2</code><br>
-Deletes the 2nd activity in the CS2030 module activity-list.</p>
+<p>Switch to calendar tab using TAB key.</p>
+</li>
+<li>
+<p>Switch to calendar tab by clicking on the tab.</p>
 </li>
 </ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-module-code-mdelete-code"><a class="link" href="#deleting-a-module-code-mdelete-code">Deleting a module: <code>Mdelete</code></a></h3>
-<div class="paragraph">
-<p>Deletes a module along with its activity-list.<br>
-Format: <code>Mdelete m/MODULE_CODE</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the module with MODULE_CODE and also its activity-list</p>
-</li>
-<li>
-<p>MODULE_CODE must be an existing module</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Mdelete m/CS2030</code><br>
-Deletes the respective CS2030 module.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="creating-shortcuts-code-shortcut-code-code-coming-in-v2-0-code"><a class="link" href="#creating-shortcuts-code-shortcut-code-code-coming-in-v2-0-code">Creating shortcuts: <code>shortcut</code> <code>[coming in v2.0]</code></a></h3>
-<div class="paragraph">
-<p>Creates a shortcut for specified activity.<br>
-Format: <code>shortcut s/SHORTCUT c/COMMAND</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Creates a <code>SHORTCUT</code> to the specified <code>COMMAND</code>.</p>
-</li>
-<li>
-<p>Can only add <code>SHORTCUT</code> to an existing <code>COMMAND</code>.</p>
-</li>
-<li>
-<p>Can add multiple <code>SHORTCUT</code> for a specific <code>COMMAND</code>.</p>
-</li>
-<li>
-<p>A <code>SHORTCUT</code> will be generated that is unique for a <code>COMMAND</code>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>shortcut s/l c/list</code><br>
-Adds a shortcut "l" to command list. "l" can now be used in place of list.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="generating-statistics"><a class="link" href="#generating-statistics">Generating statistics</a></h3>
-<div class="paragraph">
-<p>Displays statistics of all activities.</p>
-</div>
-<div class="paragraph">
-<p>Switch to statistics tab using the TAB key.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>statistics [tp/TIME_PERIOD] [m/MODULE_CODE]</code></p>
-</div>
-<div class="paragraph">
-<p>Customising statistics parameters <code>[coming in v2.0]</code>
-<strong> Can add <code>TIME_PERIOD</code> of week, month and year to see activities specific to that time period.
-</strong> Can add <code>MODULE_CODE</code> to see activities specific to that module.</p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>statistics tp/WEEK</code><br>
-Displays activities completed over this week.</p>
-</li>
-<li>
-<p><code>statistics tp/MONTH</code><br>
-Displays activities completed over this month.</p>
-</li>
-<li>
-<p><code>statistics m/CS2101</code><br>
-Displays activities completed for CS2101.</p>
-</li>
-<li>
-<p><code>statistics tp/MONTH m/CS2101</code><br>
-Displays activities completed over this month for CS2101.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="automating-activity-code-repeat-code"><a class="link" href="#automating-activity-code-repeat-code">Automating activity: <code>repeat</code></a></h3>
-<div class="paragraph">
-<p>Allows user to repeat an activity from a module.
-Format: <code>repeat m/MODULE_CODE a/ACTIVITY_NAME r/INDEX</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> can be in <code>1 for Weekly</code>, <code>2 twice Weekly</code>, <code>3 for Monthly</code>.</p>
-</li>
-<li>
-<p>By default <code>INDEX</code> will be <code>0</code> hence no automation will be done.</p>
-</li>
-<li>
-<p>The activity will be regenerated once user open the application.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>repeat m/CS3233 a/SEA Group Programming Assignment r/0</code> to cancel.</p>
-</li>
-<li>
-<p><code>repeat m/CS3233 a/SEA Group Programming Assignment r/1</code> to regenerate weekly.</p>
-</li>
-<li>
-<p><code>repeat m/CS3233 a/SEA Group Programming Assignment r/2</code> to regenerate twice weekly.</p>
-</li>
-<li>
-<p><code>repeat m/CS3233 a/SEA Group Programming Assignment r/3</code> to regenerate monthly.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="export-to-calendar-code-export-code-code-coming-in-v2-0-code"><a class="link" href="#export-to-calendar-code-export-code-code-coming-in-v2-0-code">Export to calendar <code>export</code> <code>[coming in v2.0]</code></a></h3>
-<div class="paragraph">
-<p>Exports all module activity-lists onto a calendar (.ics format) for users.<br>
-Format: <code>export</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
 <div class="imageblock" style="text-align: middle">
 <div class="content">
-<img src="../images/export_example.png" alt="export example" width="300">
+<img src="../images/Calendar_View.png" alt="Calendar View" width="300">
 </div>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Activities are listed as calendar events as shown. Full design not confirmed, image courtesy of [<a href="https://www.knack.com/templates/event-calendar">knack</a>]</p>
+<p>Provides users with a great way to see what upcoming deadlines and events over the days, weeks or months.</p>
+</li>
+<li>
+<p>The calendar updates along with the activities being displayed. This means that if a user enters a <code>find</code> command and the activities that matches the keyword are only displayed on the module&#8217;s tab. Then the calendar tab will also display the same few activities!</p>
+</li>
+<li>
+<p>This allows users to easily find their tasks and note down when is it going to happen or when is it due. Making it a more pleasant user experience!</p>
+</li>
+<li>
+<p>The individual date cells are scrollable. If any of your activities are not shown, hover your mouse over the dates and scroll down to find it!</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="export-calendar-code-calendar-code"><a class="link" href="#export-calendar-code-calendar-code">Export Calendar: <code>calendar</code></a></h3>
+<div class="paragraph">
+<p><code>Contributed by: kester-ng</code><br>
+Allows users to export the current calendar into an .ics format for other calendar applications<br>
+Format: <code>calendar [p/FILE_PATH]</code></p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Exports the calendar into a .ics file named <code>nasa.ics</code> onto specified file path.</p>
+</li>
+<li>
+<p>If file path is not specified, the resulting .ics file can be found in the /data directory.</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">Encrypting data files <code>[coming in v2.0]</code></a></h3>
+</div>
 <div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>calendar p/./nasa</code><br>
+exports the current calendar into nasa.ics file that is located at <code>./nasa</code> directory.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The export command will export all activities regardless of whether is it currently shown or not.</p>
+</li>
+<li>
+<p>Typing this command will cause all activities to be displayed!</p>
+</li>
+<li>
+<p>Deadlines are represented as a <code>VTODO</code> entry in the .ics file. And there are some calendars that do not support this (eg: Google calendar). Currently, deadlines will not be able to be displayed on such calendars. Will expand to support these types of calendars <code>[Coming in V2.0]</code>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -358,254 +309,17 @@ Format: <code>export</code></p>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">[Proposed] Undo/Redo feature</a></h3>
-<div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">Proposed Implementation</a></h4>
+<h3 id="add-deadlines-feature"><a class="link" href="#add-deadlines-feature">Add Deadlines feature</a></h3>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>NasaBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and
-<code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current NASA book state in its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous NASA book state from its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone NASA book state from its history.</p>
-</li>
-</ul>
+<p><code>Contributed by: kester-ng</code></p>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the
-initial NASA book state, and the <code>currentStatePointer</code> pointing to that single NASA book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoState0.png" alt="UndoRedoState0">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th module in the NASA book. The <code>delete</code> command calls
-<code>Model#commitAddressBook()</code>, causing the modified state of the NASA book after the <code>delete 5</code> command executes to be
-saved</p>
-</div>
-<div class="paragraph">
-<p>in the <code>NASABookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted NASA book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoState1.png" alt="UndoRedoState1">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new module. The <code>add</code> command also calls <code>Model#commitAddressBook()
-`, causing another modified NASA book state to be saved into the `NASABookStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoState2.png" alt="UndoRedoState2">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the NASA book state will not be saved
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>into the <code>NASABookStateList</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the module was a mistake, and decides to undo that action by executing the
-<code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once
-to the left, pointing it to the previous NASA book state, and restores the NASA book to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoState3.png" alt="UndoRedoState3">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial NASA book state, then there are no previous NASA
-book
-states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoSequenceDiagram.png" alt="UndoSequenceDiagram">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once
-to the right, pointing to the previously undone state, and restores the NASA book to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>NASABookStateList.size() - 1</code>, pointing to the latest NASA book state, then
-there
-are no undone NASA book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the
-case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the NASA book, such as <code>list</code>,
-will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the
-<code>NASABookStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoState4.png" alt="UndoRedoState4">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not
-pointing at the end of the <code>NASABookStateList</code>, all NASA book states after the <code>currentStatePointer</code> will be purged. We
-designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoState5.png" alt="UndoRedoState5">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/CommitActivityDiagram.png" alt="CommitActivityDiagram">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire NASA book.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the module being deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of NASA book states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="add-deadlines-lessons-and-events-feature"><a class="link" href="#add-deadlines-lessons-and-events-feature">Add Deadlines, Lessons and Events Feature</a></h3>
-<div class="paragraph">
-<p>Deadlines, lessons and events are to be added with their own commands. Refer to the user guide for the specific commands. Adding of activities is facilitated by ModelManager#addActivity.</p>
+<p>Users can add in deadlines into a specific module, the following subsections explains the implementation and design considerations for the feature.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
 <div class="paragraph">
-<p>For any adding of activities, the command used will be the name of the activity. For instance, to add deadline, the command will be <code>deadline [paramters&#8230;&#8203;]</code>.</p>
-</div>
-<div class="paragraph">
-<p>The following activity diagram shows how a deadline (example) can be added. Lessons and events follow the same flow.</p>
+<p>The following activity diagram shows how a deadline (example) can be added.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -638,54 +352,87 @@ designed it this way because it no longer makes sense to redo the <code>add n/Da
 </ol>
 </div>
 <div class="paragraph">
-<p>The figure below shows the sequence diagram on what happens with the simple execution of the aforementioned command.</p>
+<p>The figure below shows the sequence diagram on what happens with the simple execution of the aforementioned command. First image shows the logic component while the second image shows the logic and model component (mainly model).</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/AddDeadlineLogicSequenceDiagram.png" alt="AddDeadlineLogicSequenceDiagram">
 </div>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddDeadlineModelSequenceDiagram.png" alt="AddDeadlineModelSequenceDiagram">
 </div>
-<div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
-<div class="paragraph">
-<p>The design considerations for the classes are shown below:</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 59%;">
-<colgroup>
-<col style="width: 9.9099%;">
-<col style="width: 45.045%;">
-<col style="width: 45.0451%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Choice</th>
-<th class="tableblock halign-left valign-top">Pros:</th>
-<th class="tableblock halign-left valign-top">Cons:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.Placing all events, deadlines and lessons into one class called Activity</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Easy and fast to implement. Very efficient and less dependencies</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bad design, and one class handles all three different logics.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.Having an abstract Activity class, and events, deadlines and lessons all inherit that abstract class</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Somewhat easy to implement, polymorphism allows changing of one class without affecting the others.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Attributes can vary for different tasks. Hence additional code may be needed and even duplicated code due to similar logic.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.Same as 2, but now each attribute for activity has a separate class</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tedious to implement.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Without the classes for attributes, validating whether the attributes are legal needs to be done in the activity class which violates SRP design principle. But now each attribute has its own class with its own validation methods</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="add-reminder-feature"><a class="link" href="#add-reminder-feature">Add Reminder Feature</a></h3>
+<h3 id="calendar-export-feature"><a class="link" href="#calendar-export-feature">Calendar Export Feature</a></h3>
+<div class="paragraph">
+<p>This feature allows the current calendar view to be exported as a ics file for other calendars to import.
+Users can choose to either export it to the default ./data filepath or specify their own filepath for the file to be exported to.</p>
+</div>
+<div class="sect3">
+<h4 id="internal-workings-for-the-calendar-export-feature"><a class="link" href="#internal-workings-for-the-calendar-export-feature">Internal Workings for the Calendar Export Feature</a></h4>
+<div class="paragraph">
+<p><code>Contributed by: kester-ng</code></p>
+</div>
+<div class="paragraph">
+<p>Below is an example of a user requesting an export calendar command.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user enters the command <code>calendar f/User/documents/calendar</code></p>
+</li>
+<li>
+<p>The LogicManager will create NasaBookParser to parse the user input.</p>
+</li>
+<li>
+<p>NasaBookParser will create ExportCalendarCommandParser which parses the input and creates a ExportCalendarCommand.</p>
+</li>
+<li>
+<p>ExportCalendarCommand will then execute. In the first step, all the deadlines and events are retrieved from the model.</p>
+</li>
+<li>
+<p>Next, each deadline or event are being used to create new IcsDeadline or IcsEvent respectively. These new objects are the representation of their respective activities in ics format (using getIcsFormat() method).</p>
+</li>
+<li>
+<p>Deadlines are represented by <code>VTODO</code> objects in ics file and events are represented by <code>VEVENT</code> objects.</p>
+</li>
+<li>
+<p>While creating IcsDeadline or IcsEvent, IcsSchedules are created if the deadline or event has a auto-generation indicator (ie generate every week). The IcsSchedule object is appended to the IcsDeadline/IcsEvent object to allow it to auto-generate in calendars.</p>
+</li>
+<li>
+<p>Once all IcsDeadlines and IcsEvents are created, the command will then write all the ics Formatted activities to the file called <code>nasa.ics</code> at the filepath.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The image below indicates the activity diagram giving a brief flow of events occurring.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExportCalendarActivityDiagram.png" alt="ExportCalendarActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The images below show the sequence diagram of the export calendar command feature. The first image mainly illustrates the flow for parsing and creating the command whereas the second mainly illustrates the flow for executing the command and returning the result.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExportCalendarLogicSequenceDiagram.png" alt="ExportCalendarLogicSequenceDiagram">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExportCalendarModelSequenceDiagram.png" alt="ExportCalendarModelSequenceDiagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-reminder-feature-coming-in-code-v2-0-code"><a class="link" href="#add-reminder-feature-coming-in-code-v2-0-code">Add Reminder Feature (Coming in <code>v2.0</code>)</a></h3>
 <div class="paragraph">
 <p>Reminders can be added to activities so that the user can be notified when the activity is going to occur soon.</p>
 </div>
@@ -734,1832 +481,5 @@ designed it this way because it no longer makes sense to redo the <code>add n/Da
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="snooze-reminder-feature"><a class="link" href="#snooze-reminder-feature">Snooze Reminder Feature</a></h3>
-<div class="paragraph">
-<p>Users can also snooze reminders so that they can get the same reminder at a different time.</p>
 </div>
-<div class="paragraph">
-<p>Below is an example of how users can snooze reminders:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The user enters the snooze reminder command: <code>snooze 2 d/12-12-2020 15:30</code>.</p>
-</li>
-<li>
-<p>The LogicManager will create NasaBookParser to parse the user input.</p>
-</li>
-<li>
-<p>NasaBookParser will create SnoozeReminderCommandParser to parse the input and return SnoozeReminderCommand</p>
-</li>
-<li>
-<p>LogicManager will execute the command and the Reminder that has just passed with the associated index on the <code>ActiveRemindersList</code> will have its due time updated. If time not specified, default is 5 minutes.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>For more information regarding the procedure, please refer to the Activity Diagram below:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/SnoozeReminderActivityDiagram.png" alt="SnoozeReminderActivityDiagram">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="automation"><a class="link" href="#automation">Automation</a></h3>
-<div class="paragraph">
-<p>We store the date that the user has create an activity. Based on user input to repeat the task either
-weekly, twice weekly or monthly, our application will check whether today&#8217;s date has passed <code>date of creation</code> + <code>user preset</code>.</p>
-</div>
-<div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
-<div class="paragraph">
-<p>By default there will not be any scheduling for any activities. Therefore, user has to enter <code>repeat</code> followed by <code>module code</code>
-, <code>activity name</code> for identification of the activity and <code>1-Weekly-, 2-Twice Weekly, 3-Monthly</code>.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>An example of command line <code>repeat m/CS3233 a/Lab Assignment r/1</code>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Once the command line is entered, our application will react in the following steps :</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>LogicManager will create NasaBookParser to parse the user input <code>repeat</code>.</p>
-</li>
-<li>
-<p>NasaBookParser will call RepeatActivityCommandParser to check if all the following prefixes <code>m/</code>, <code>a/</code> and <code>r/</code> are present.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>If not present, an error message <code>"invalid command format!"</code> will be prompted.</p>
-</li>
-<li>
-<p>Else, a success message <code>"set repeated"</code> will be given, and RepeatCommand will be executed.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>RepeatCommand will set schedule in Model.</p>
-</li>
-<li>
-<p>Model will first find the module in it internal module list.</p>
-</li>
-<li>
-<p>After, it will find for the activity inside the module.</p>
-</li>
-<li>
-<p>Once found, the attribute Schedule in activity will be set to <code>1</code>, <code>2</code> or <code>3</code> and make changes to the expiring date.</p>
-</li>
-</ol>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/sequenceDiagramAutomation.png" alt="sequenceDiagramAutomation">
-</div>
-</div>
-<div class="paragraph">
-<p>However, above is only the creation. What happen if the activity has expired when NasaBook is not in use? Not to worry, because when
-the user initialise the program again, the system will automatically reset the expired date.</p>
-</div>
-<div class="paragraph">
-<p>This is how it goes :</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>MainApp will execute initialisation which will fetch data through NasaBookStorage.</p>
-</li>
-<li>
-<p>NasaBookStorage will access json file in JsonAdaptedModule to retrieve the old schedule.</p>
-</li>
-<li>
-<p>NasaBook will load every module in the module list and update each activity in the module through the Schedule class.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>If scheduler sees <code>0</code> nothing will be done and the activity will get deleted.</p>
-</li>
-<li>
-<p>If scheduler sees <code>1</code>,<code>2</code> or <code>3</code> it will update to the new date.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sort-activity-feature-to-be-implemented"><a class="link" href="#sort-activity-feature-to-be-implemented">Sort Activity Feature (To be implemented)</a></h3>
-<div class="paragraph">
-<p>Activities (ie. deadlines, lessons and events) are sorted by a specific criteria, such as date added or priority.
-By default, activities are sorted by date added.</p>
-</div>
-<div class="paragraph">
-<p>The list of criteria to be sorted are as follows:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Date added</p>
-</li>
-<li>
-<p>Lexicographical order</p>
-</li>
-<li>
-<p>Priority</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Refer to the user guide for the specific commands. Sorting of activities is facilitated by
-ModelManager#sortActivityList.</p>
-</div>
-<div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
-<div class="paragraph">
-<p>To sort activities, the command will use the keyword <code>sort</code> followed by the flag <code>/sm</code>, then the sort criteria.</p>
-</div>
-<div class="paragraph">
-<p>The following diagram shows how activities are sorted.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/SortActivityDiagram.png" alt="SortActivityDiagram">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="internal-workings-for-the-sort-activity-command"><a class="link" href="#internal-workings-for-the-sort-activity-command">Internal workings for the sort activity command</a></h4>
-<div class="paragraph">
-<p>Below is an example of a user sorting activities by priority and how the underlying system works.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The user enters the command <code>sort sm/priority</code></p>
-</li>
-<li>
-<p>The LogicManager will create NasaBookParser to parse the user input.</p>
-</li>
-<li>
-<p>NasaBookParser will create an SortCommandParser which parses the input and returns an SortCommand.</p>
-</li>
-<li>
-<p>LogicManager will execute the SortCommand. SortCommand will sort all activities by the criteria specified.</p>
-</li>
-<li>
-<p>The underlying model&#8217;s activity lists are all updated.</p>
-</li>
-<li>
-<p>The view is updated to the new model.</p>
-</li>
-<li>
-<p>Subsequently, all CRUD operations will preserve the order specified by the latest sort command entered by the user.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The figure below shows the sequence diagram on what happens with the execution of the aforementioned command.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/SortLogicSequenceDiagram.png" alt="SortLogicSequenceDiagram">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
-<div class="paragraph">
-<p>The design considerations for the classes are shown below:</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 59%;">
-<colgroup>
-<col style="width: 9.9099%;">
-<col style="width: 45.045%;">
-<col style="width: 45.0451%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Choice</th>
-<th class="tableblock halign-left valign-top">Pros</th>
-<th class="tableblock halign-left valign-top">Cons</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Permanent modification on the model&#8217;s activity list when sorting.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Persistence of sorting ensure consistency
-regardless of user activity.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rigid design, user will have to explicitly enter the sort command and criteria to change
-sort format.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All CRUD operations on activity list after sort criteria is defined will adhere to the sort criteria.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Consistency in
-sort criteria is ensured, removing the need to enter the sort command after CRUD operations.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Can be expensive on
-performance, and affect responsiveness of application when there are many entries of activities.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="statistics-feature-to-be-implemented"><a class="link" href="#statistics-feature-to-be-implemented">Statistics Feature (To be implemented)</a></h3>
-<div class="paragraph">
-<p>Statistics on the status of activities based on a specific criteria such as time period is shown. By default, the
-overall statistics for all activities are shown.</p>
-</div>
-<div class="paragraph">
-<p>The list of criteria to be sorted are as follows:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Overall</p>
-</li>
-<li>
-<p>Module</p>
-</li>
-<li>
-<p>Activity type</p>
-</li>
-<li>
-<p>Time (Weekly/Monthly/Yearly)</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Refer to the user guide for the specific commands. Generating statistics is facilitated by
-ModelManager#calculateStatistics.</p>
-</div>
-<div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h4>
-<div class="paragraph">
-<p>To generate statistics for activities, the command will use the keyword <code>statistics</code> followed by a specific criteria.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="internal-workings-for-the-statistics-command"><a class="link" href="#internal-workings-for-the-statistics-command">Internal workings for the statistics command</a></h4>
-<div class="paragraph">
-<p>Below is an example of a user requesting for statistics by for the week and how the underlying system works.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The user enters the command <code>statistics t/week</code></p>
-</li>
-<li>
-<p>The LogicManager will create NasaBookParser to parse the user input.</p>
-</li>
-<li>
-<p>NasaBookParser will create an StatisticsCommandParser which parses the input and returns an StatisticsCommand.</p>
-</li>
-<li>
-<p>LogicManager will execute the StatisticsCommand. StatisticsCommand will calculate the number of tasks and their
-current status for each module over the past week.</p>
-</li>
-<li>
-<p>The view is switched to the statistics tab to display the overalls statistics for the week.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="chat-bot-feature-to-be-implemented"><a class="link" href="#chat-bot-feature-to-be-implemented">Chat bot Feature (To be implemented)</a></h3>
-<div class="paragraph">
-<p>The CLI implementation is done through a chat bot like interface through a redesign of the user interface.</p>
-</div>
-<div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">Implementation</a></h4>
-<div class="paragraph">
-<p>The user interface is split into 2 sections where commands will be keyed into the chat box on the left side. Feedback
-from the programme on the result of the command will be displayed directly by the chat bot where the command history
-can be viewed. Changes made to the model will be updated in the user interface on the right side</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="internal-workings-for-the-chat-bot"><a class="link" href="#internal-workings-for-the-chat-bot">Internal workings for the chat bot</a></h4>
-<div class="paragraph">
-<p>Below is an example of a user requesting for statistics by for the week and how the underlying system works.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The user enters a command <code>statistics</code></p>
-</li>
-<li>
-<p>The NASA application will process the command. (Refer to section 3.8 for details)</p>
-</li>
-<li>
-<p>Command result generated by the logic manager is returned and displayed in the chat bot.</p>
-</li>
-<li>
-<p>User interface switches tabs to the statistics tab where the overall statistics are displayed.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">Logging</a></h3>
-<div class="paragraph">
-<p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Configuration</a>)</p>
-</li>
-<li>
-<p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
-</li>
-<li>
-<p>Currently log messages are output through: <code>Console</code> and to a <code>.log</code> file.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Logging Levels</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>SEVERE</code> : Critical problem detected which may possibly cause the termination of the application</p>
-</li>
-<li>
-<p><code>WARNING</code> : Can continue, but with caution</p>
-</li>
-<li>
-<p><code>INFO</code> : Information showing the noteworthy actions by the App</p>
-</li>
-<li>
-<p><code>FINE</code> : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">Configuration</a></h3>
-<div class="paragraph">
-<p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">Documentation</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Refer to the guide <a href="Documentation.html">here</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">Testing</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Refer to the guide <a href="Testing.html">here</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">Dev Ops</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Refer to the guide <a href="DevOps.html">here</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="product-scope"><a class="link" href="#product-scope">Appendix A: Product Scope</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Target user profile</strong>:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>has a need to manage a information on different modules</p>
-</li>
-<li>
-<p>prefer desktop apps over other types</p>
-</li>
-<li>
-<p>can type fast</p>
-</li>
-<li>
-<p>prefers typing over mouse input</p>
-</li>
-<li>
-<p>is reasonably comfortable using CLI apps</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Value proposition</strong>: manage modules faster than a typical mouse/GUI driven app</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="user-stories"><a class="link" href="#user-stories">Appendix B: User Stories</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 59%;">
-<colgroup>
-<col style="width: 22%;">
-<col style="width: 23%;">
-<col style="width: 25%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Priority</th>
-<th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
-<th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
-<th class="tableblock halign-left valign-top">So that I can&#8230;&#8203;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">busy student doing a lot of modules</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">be able to edit my tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have updated information from the professors
-of that module.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hardworking and busy student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mark my tasks as done</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know what else to do</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">busy and clumsy student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete tasks that were wrongly inputted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove erroneous tasks</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lazy student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have a user interface that is intuitive</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">spend less time navigating</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know that deadline of homework, projects and assignments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">finish them by a certain date</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">undo and redo actions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">save time</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">forgetful student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have reminders and alerts sent to me</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">act on my pre-set reminders at the desired time</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">search for relevant tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see if I have done them or not</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see my group meetings</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know when they are</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">filter my tasks based on certain criteria</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view them easily</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have quick access to information on how to use the product</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">learn to use the product</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">check on the tasks due by a certain date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">plan my time accordingly</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">extremely anxious student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">advance notification on deadlines and upcoming examinations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">prepare in advance</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view all my tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gauge how much work I have left.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">busy and hardworking student with limited time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have suggestions on the next deadline assignment homework to do</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">save time on checking what task to complete</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lazy student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">automate my homework schedule</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">avoid keying in recurring tasks</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">anxious and stressed student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">provide daily motivational quotes or jokes or coding challenges</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lighten up my
-mood for the day</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">student who values privacy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add password protection</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">prevent others from viewing my tasks</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">export all my tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view them easily</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add in my personal timetable</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">detect clashes between my personal and school timetable</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">jot down notes during lecture</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">refer to them in the future</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">university student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add my timetable</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know the time and venue of my classes</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">objective student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view my academic results</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track on the percentage of points that I need in order to
-achieve a result</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">allocate a specific time for each task</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">manage my time more efficiently</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track on the amount of tasks finished</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">analyse whether I am staying on track</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">share information with my friends</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">allow them to have the same schedule and asks to do</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">customise my own shortcuts</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">save time when typing in commands</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">stressed-out student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">play a chill game</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">relax my mind</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">student with ex-co positions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find the next free timing for other meetings and responsibilities</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">can save time</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>NASA</code> application and the <strong>Actor</strong> is the <code>user</code>, unless specified
-otherwise)</p>
-</div>
-<h3 id="use-case-initialisation" class="discrete">Use case: Initialisation</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>NASA prompt user to key in modules taken during the semester on start-up.</p>
-</li>
-<li>
-<p>User enters modules taken eg. <code>add modules /m CS2103T CS2106 CS2101</code>.</p>
-</li>
-<li>
-<p>NASA confirms and display the modules entered.</p>
-</li>
-<li>
-<p>User can start to use the command line.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. Add nothing.</p>
-</li>
-<li>
-<p>1b. Add activities</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-add-deadlines" class="discrete">Use case: Add Deadlines</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to add a deadline for a particular module.
-<code>Tadd deadline m/CS2103T /d01-03-2019 23:59 /tHomework [/nThis are the notes.]</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages.</p>
-</li>
-<li>
-<p>NASA will displays a list of all the items inside the modules</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. No such modules.</p>
-</li>
-<li>
-<p>1b. Prompt user to add the modules not listed.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-<h3 id="use-case-add-event" class="discrete">Use case: Add Event</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to add an event for a particular module.<br>
-<code>Tadd event m/CS2103T /d01-03-2019 23:59 /tProject Work [/nThis are the notes.]</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages.</p>
-</li>
-<li>
-<p>NASA will displays a list of all the items inside the modules</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. No such modules.</p>
-</li>
-<li>
-<p>1b. Prompt user to add the modules not listed.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-<h3 id="use-case-add-lesson" class="discrete">Use case: Add Lesson</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to add an event for a particular module.<br>
-<code>Madd lesson m/CS2103T /d01-03-2019 23:59 /tTutorial [/nThis are the notes.]</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages.</p>
-</li>
-<li>
-<p>NASA will displays a list of all the items inside the modules</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. No such modules.</p>
-</li>
-<li>
-<p>1b. Prompt user to add the modules not listed.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-<h3 id="use-case-list" class="discrete">Use case: List</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to list everything in a module by dates.<br>
-<code>list CS2103T s/date ASC</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages</p>
-</li>
-<li>
-<p>NASA will display the module and it&#8217;s items.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. No such moduleID.</p>
-</li>
-<li>
-<p>1b. Prompt user to re-enter the correct moduleID.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-edit" class="discrete">Use case: Edit</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to change the date to 01-04-2019 and set priority to the lowest 5 for a tasksID=12 under the module CS2103T.<br>
-<code>edit m/CS2103T 12 /d01-04-2019 23:59 /p5</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages</p>
-</li>
-<li>
-<p>NASA will display the module and it&#8217;s items.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. No such moduleID.</p>
-</li>
-<li>
-<p>1b. Prompt user to re-enter the correct moduleID.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-delete" class="discrete">Use case: Delete</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to delete module CS2103T and CS2106.<br>
-<code>delete CS2103T CS2106</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages</p>
-</li>
-<li>
-<p>NASA will display remaining module.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. No such moduleID.</p>
-</li>
-<li>
-<p>1b. Prompt user to re-enter the correct moduleID.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-<h3 id="use-case-find" class="discrete">Use case: find</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to find all task that contains KEYWORD "homework".<br>
-<code>find /t homework</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages</p>
-</li>
-<li>
-<p>NASA will display all modules that has the tasks "homework".</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. No such KEYWORD in modules.</p>
-</li>
-<li>
-<p>1b. Prompt user to re-enter the correct KEYWORD.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-<h3 id="use-case-repeat" class="discrete">Use case: repeat</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to repeat all task under CS2103T every tuesday.<br>
-<code>repeat CS2103t /d 2</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages</p>
-</li>
-<li>
-<p>NASA will display all modules that has the tasks "homework".</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. Nothing to repeat.</p>
-</li>
-<li>
-<p>1b. Prompt user to add tasks to modules.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-<h3 id="use-case-export" class="discrete">Use case: export</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to export all task to calendar.<br>
-<code>export</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages</p>
-</li>
-<li>
-<p>Calendar xml file will be opened to view.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. No modules added.</p>
-</li>
-<li>
-<p>1b. Prompt user to add modules and tasks.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-<h3 id="use-case-add-checklist" class="discrete">Use case: Add Checklist</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to add a checklist for a particular tasks.<br>
-<code>chadd m/CS2030 12  c/Prepare script</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages</p>
-</li>
-<li>
-<p>A checklist consisting of old and current added item will be displayed.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. No such tasksID.</p>
-</li>
-<li>
-<p>1b. Prompt user to add the tasks not listed.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-<h3 id="use-case-delete-checklist" class="discrete">Use case: Delete Checklist</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to delete a tasksID=12 under checklistID=2.<br>
-<code>chdel m/CS2030 12 2</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages</p>
-</li>
-<li>
-<p>A checklist consisting of old and current added item will be displayed.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. No such tasksID or checklistID.</p>
-</li>
-<li>
-<p>1b. Prompt user to add the tasks or checklist.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-<h3 id="use-case-edit-checklist" class="discrete">Use case: Edit Checklist</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to edit a tasksID=12 under checklistID=2.<br>
-<code>chedit m/CS2030 12 2 c/new notes messages here</code></p>
-</li>
-<li>
-<p>User requests to complete a tasksID=4 under checklistID=2.<br>
-<code>chedit m/CS2030 4 2 done</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages.</p>
-</li>
-<li>
-<p>A checklist consisting of old and current added item will be displayed.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. No such tasksID or checklistID.</p>
-</li>
-<li>
-<p>1b. Prompt user to add the tasks or checklist.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-<h3 id="use-case-clear" class="discrete">Use case: Clear</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to clear all tasks and checklist.<br>
-<code>clear</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages</p>
-</li>
-<li>
-<p>All modules will be emptied unless specified.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. User request to clear only specified modules.<br>
-<code>clear CS2103T CS2106</code></p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-<h3 id="use-case-quote" class="discrete">Use case: Quote</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to get a motivation quotes<br>
-<code>quote</code></p>
-</li>
-<li>
-<p>NASA will provide a pop-up quote.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-<h3 id="use-case-statistics" class="discrete">Use case: Statistics</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests for statistics.<br>
-<code>statistics</code></p>
-</li>
-<li>
-<p>NASA will display overall statistics.</p>
-</li>
-</ol>
-</div>
-<div class="sect2">
-<h3 id="use-case-exit"><a class="link" href="#use-case-exit">Use case: Exit</a></h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to exit the program.<br>
-<code>exit</code></p>
-</li>
-<li>
-<p>NASA will provide a acknowledgement messages.</p>
-</li>
-<li>
-<p>User-interface will close.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Accessibility</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>App should be colourblind-friendly.</p>
-</li>
-<li>
-<p>Colourblind users should be able to discern all text and information on the GUI to the same extent as
-non-colourblind individuals.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Extensibility</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>App should be able to support feature increments without breaking existing features.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Interoperability</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>App should work on any mainstream OS as long as it has Java 11 or above installed.</p>
-</li>
-<li>
-<p>App should be able to read saved data files transferred between computers.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Maintainability</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>App’s codebase should be easily understandable to a Software Developer with one year experience in Java.</p>
-</li>
-<li>
-<p>App’s codebase should be accessible and available for contribution via feedback and suggestions from
-external developers.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Performance</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>App should be able to hold up to 1000 tasks without a noticeable sluggishness in performance for typical usage.</p>
-</li>
-<li>
-<p>App should be able to process user input and return a response within 3 seconds.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Reliability</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>App should return an appropriate error or exception response and not crash when a user enters an invalid
-input command.</p>
-</li>
-<li>
-<p>App should return an appropriate error and not crash when it fails to process a user input command.</p>
-</li>
-<li>
-<p>App should inform the user in the event of an unexpected crash and potential loss of data.</p>
-</li>
-<li>
-<p>App should exhibit behaviour consistent with the User Guide’s specifications.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Usability</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be
-able to accomplish most of the tasks faster using commands than using the mouse.</p>
-</li>
-<li>
-<p>App first time startup process should have sufficient guidance for first time users to get started using the app
-with basic CRUD function.</p>
-</li>
-<li>
-<p>App should be useable without requiring internet connection (apart from downloading the file online).</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="glossary"><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
-<dd>
-<p>Windows, Linux, Unix, OS-X</p>
-</dd>
-<dt class="hdlist1"><a id="task"></a> Tasks</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Tasks consist of deadlines, lessons and events</p>
-</li>
-<li>
-<p>Deadlines are essentially assignments, homework or whatever that needs to be done by a specific date</p>
-</li>
-<li>
-<p>Lessons are tutorials and classes and will be auto-generated</p>
-</li>
-<li>
-<p>Events are other academic activities such as competitions, remedial and exams</p>
-</li>
-</ul>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Given below are instructions to test the app manually.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-These instructions only provide a starting point for testers to work on; testers are expected to do more <em>exploratory</em> testing.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">Launch and Shutdown</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Initial launch</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Download the jar file and copy into an empty folder</p>
-</li>
-<li>
-<p>Double-click the jar file<br>
-Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Saving window preferences</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
-</li>
-<li>
-<p>Re-launch the app by double-clicking the jar file.<br>
-Expected: The most recent window size and location is retained.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="adding-a-module"><a class="link" href="#adding-a-module">Adding a module</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Adding a new module</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>Madd m/CS2030 n/Programming Methodology II</code><br>
-Expected: The module <code>CS2030</code> will be created and displayed on the screen.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Adding a module that already exists</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>Madd m/CS2030 n/Programming Methodology II</code><br>
-Expected: Assuming the mod is added from the previous test case, a duplicate module error will be shown.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Providing wrong format for module parameters</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>Madd m/@c2231 n/Computer Science is fun</code><br>
-Expected: Format error is displayed along with an example of a correct format.</p>
-</li>
-<li>
-<p>Test case: `Madd m/cs2030 n/"<br>
-Expected: Format error is displayed along with an example of a correct format.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-module"><a class="link" href="#deleting-a-module">Deleting a module</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Deleting a module that exists</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>Mdelete m/CS2101</code> (default module preset)<br>
-Expected: The module <code>CS2101</code> should have been deleted.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Trying to delete a module that does not exist</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>Mdelete m/AX1103</code><br>
-Expected: Unless the user adds in the module above, there should be an error message displayed.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Passing in a wrong format for module</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>Mdelete m/1@00</code><br>
-Expected: Error message with wrong format for module will be shown.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="adding-an-activity"><a class="link" href="#adding-an-activity">Adding an Activity</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Adding a new activity</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>deadline m/CS2030 a/Lab 2 d/12-12-2020 23:59 p/1</code><br>
-Expected: A new deadline activity with the above description is displayed within the CS2030 module activity list.</p>
-</li>
-<li>
-<p>Test case: <code>lesson m/CS2030 a/Tutorial sd/12-12-2020 10:00 ed/12-12-2020 12:00 n/Do tutorial</code><br>
-Expected: A new lesson activity with the above description is displayed within the CS2030 module activity list.</p>
-</li>
-<li>
-<p>Test case: <code>event m/CS2030 a/Recitation sd/12-12-2020 12:00 ed/12-12-2020 14:00</code><br>
-Expected: A new event activity with the above description is displayed within the CS2030 module activity list.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Adding a duplicate activity</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>deadline m/CS2030 a/Lab 2 d/12-12-2020 23:59 p/1</code><br>
-Expected: If this activity has not been added already, enter this command twice. A duplicated activity error message will be displayed.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Adding an activity to a module that does not exist</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>deadline m/MA1101R a/Lab 2 d/12-12-2020 23:59 p/1</code><br>
-Expected: Assuming this module does not exist (not displayed), then a module not found error will be thrown.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-an-activity"><a class="link" href="#deleting-an-activity">Deleting an activity</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Deleting an activity that exists</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>delete 1 m/CS2030</code><br>
-Expected: The first activity in the CS2030 activity list will be deleted.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Deleting an activity that does not exist</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>delete 10 m/CS2030</code><br>
-Expected: An error message will be displayed.</p>
-</li>
-<li>
-<p>Test case: <code>delete 200 m/CS2101</code><br>
-Expected: An error message will be displayed.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Deleting an activity from a module that does not exist</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>delete 1 m/AX1107</code><br>
-Expected: An error message will be displayed.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-a-module"><a class="link" href="#editing-a-module">Editing a module</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Editing a module</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>Medit m/CS2O30 m/CS1231 n/Discrete Structures in Mathematics</code><br>
-Expected: Module CS2030 will be changed to CS1231 with the name.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Editing a module that does not exist</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>Medit m/AX1107 m/CS1231 n/Discrete Structures in Mathematics</code><br>
-Expected: Module cannot be found error will be displayed.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Editing a module but with the same name and/or module code</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>Medit m/CS2030 m/CS2030 n/Programming Methodology II</code><br>
-Expected: Module being edited already contains the following descriptions error will be shown.
-=== Deleting a module</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-an-activity"><a class="link" href="#editing-an-activity">Editing an Activity</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Deleting a module while all modules are listed</p>
-</li>
-<li>
-<p>Editing an activity</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: List all modules using the <code>list</code> command. Multiple modules in the list.</p>
-</li>
-<li>
-<p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
-</li>
-<li>
-<p>Test case: <code>delete 0</code><br>
-Expected: No module is deleted. Error details shown in the status message. Status bar remains the same.</p>
-</li>
-<li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
-Expected: Similar to previous.</p>
-</li>
-<li>
-<p>Test case: <code>edit 1 m/CS2030 n/Remember to do checkstyle testing</code><br>
-Expected: The first activity notes will be updated to the following.</p>
-</li>
-<li>
-<p>Test case: Try different variations of the command.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Editing an activity that does not exist</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>edit 100 m/CS2030 n/Remember to do checkstyle testing</code><br>
-Expected: An error showing activity cannot be found will be displayed.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Editing an activity from a module that does not exist</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>edit 1 m/AX1107 &#8230;&#8203;..</code><br>
-Expected: Module not found error will be displayed.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Editing an activity with the exact same descriptions</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>edit 1 m/CS2030 [SAME PARAMETERS]</code><br>
-Expected: Activity being edited already contains the following descriptions error will be shown.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">Saving data</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Checking that NASA saves data properly</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Copy <code>NASA.jar</code> to a new directory and open it. This is to simulate the scenario where the user has no data at all (ie no data file). Type in some commands and notice that the data file will be created for you. Verify that is it correct.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Handling corrupted data</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Edit the relevant <code>.json</code> files. Type in anything you want. And then close the NASA application. Restart it, the application will notice the corrupted data and will overwrite the data with a brand new one.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
-<div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 20:49:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:36:52 UTC</div></div></div></body></html>

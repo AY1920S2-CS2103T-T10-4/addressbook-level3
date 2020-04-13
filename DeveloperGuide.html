@@ -14,10 +14,9 @@
 <ul class="sectlevel2">
 <li><a href="#Design-Architecture">2.1. Architecture</a></li>
 <li><a href="#Design-Ui">2.2. UI component</a></li>
-<li><a href="#Design-Logic">2.3. Logic component</a></li>
-<li><a href="#Design-Model">2.4. Model component</a></li>
-<li><a href="#Design-Storage">2.5. Storage component</a></li>
-<li><a href="#Design-Commons">2.6. Common classes</a></li>
+<li><a href="#Design-Model">2.3. Model component</a></li>
+<li><a href="#Design-Storage">2.4. Storage component</a></li>
+<li><a href="#Design-Commons">2.5. Common classes</a></li>
 </ul>
 </li>
 <li><a href="#implementation">3. Implementation</a>
@@ -26,14 +25,13 @@
 <li><a href="#add-deadlines-feature">3.2. Add Deadlines feature</a></li>
 <li><a href="#automation">3.3. Automation</a></li>
 <li><a href="#sort-feature">3.4. Sort Feature</a></li>
-<li><a href="#statistics-feature-to-be-implemented">3.5. Statistics Feature (To be implemented)</a></li>
+<li><a href="#hint-feature">3.5. Hint Feature</a></li>
 <li><a href="#calendar-export-feature">3.6. Calendar Export Feature</a></li>
-<li><a href="#chat-bot-feature-to-be-implemented">3.7. Chat bot Feature (To be implemented)</a></li>
-<li><a href="#motivational-quotes">3.8. Motivational Quotes</a></li>
-<li><a href="#add-reminder-feature-coming-in-code-v2-0-code">3.9. Add Reminder Feature (Coming in <code>v2.0</code>)</a></li>
-<li><a href="#snooze-reminder-feature-coming-in-code-v2-0-code">3.10. Snooze Reminder Feature (Coming in <code>v2.0</code>)</a></li>
-<li><a href="#logging">3.11. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.12. Configuration</a></li>
+<li><a href="#motivational-quotes">3.7. Motivational Quotes</a></li>
+<li><a href="#add-reminder-feature-coming-in-code-v2-0-code">3.8. Add Reminder Feature (Coming in <code>v2.0</code>)</a></li>
+<li><a href="#snooze-reminder-feature-coming-in-code-v2-0-code">3.9. Snooze Reminder Feature (Coming in <code>v2.0</code>)</a></li>
+<li><a href="#logging">3.10. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.11. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -211,13 +209,11 @@ The following class plays an important role at the architecture level:</p>
 <p>Executes user commands using the <code>Logic</code> component.</p>
 </li>
 <li>
-<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
+<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.
+=== Logic component</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
@@ -270,7 +266,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">2.3. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/modelDiagram.png" alt="modelDiagram">
@@ -335,7 +331,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.4. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
@@ -360,7 +356,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.5. Common classes</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>nasa.commons</code> package.</p>
 </div>
@@ -776,62 +772,44 @@ ModelManager#sortAtivityList.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="statistics-feature-to-be-implemented"><a class="link" href="#statistics-feature-to-be-implemented">3.5. Statistics Feature (To be implemented)</a></h3>
+<h3 id="hint-feature"><a class="link" href="#hint-feature">3.5. Hint Feature</a></h3>
 <div class="paragraph">
-<p>Statistics on the status of activities based on a specific criteria such as time period is shown. By default, the
-overall statistics for all activities are shown.</p>
+<p><code>Contributed by: CharmaineKoh</code></p>
 </div>
 <div class="paragraph">
-<p>The list of criteria to be sorted are as follows:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Overall</p>
-</li>
-<li>
-<p>Module</p>
-</li>
-<li>
-<p>Activity type</p>
-</li>
-<li>
-<p>Time (Weekly/Monthly/Yearly)</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Refer to the user guide for the specific commands. Generating statistics is facilitated by
-ModelManager#calculateStatistics.</p>
+<p>Hint for command popups shown as user types in command box.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation-6"><a class="link" href="#implementation-6">3.5.1. Implementation</a></h4>
 <div class="paragraph">
-<p>To generate statistics for activities, the command will use the keyword <code>statistics</code> followed by a specific criteria.</p>
+<p>Event listener is added to command box and detects changes key presses. For each key press, NASA checks if the ctext
+starts with a valid command and updates the popup accordingly.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="internal-workings-for-the-statistics-command"><a class="link" href="#internal-workings-for-the-statistics-command">3.5.2. Internal workings for the statistics command</a></h4>
+<h4 id="internal-workings-for-the-popup"><a class="link" href="#internal-workings-for-the-popup">3.5.2. Internal workings for the popup</a></h4>
 <div class="paragraph">
-<p>Below is an example of a user requesting for statistics by for the week and how the underlying system works.</p>
+<p>Below is an example of a user typing in the command "deadline" by for the week and how the underlying system works.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The user enters the command <code>statistics t/week</code></p>
+<p>The user starts to type in `deadline' into command box</p>
 </li>
 <li>
-<p>The LogicManager will create NasaBookParser to parse the user input.</p>
+<p>NASA checks as each character is typed if the string forms a valid command</p>
 </li>
 <li>
-<p>NasaBookParser will create an StatisticsCommandParser which parses the input and returns an StatisticsCommand.</p>
+<p>Once the command <code>deadline</code> is fully typed in, CommandBox calls the MainWindow.</p>
 </li>
 <li>
-<p>LogicManager will execute the StatisticsCommand. StatisticsCommand will calculate the number of tasks and their
-current status for each module over the past week.</p>
+<p>MainWindow sends command to be displayed to HintWindow.</p>
 </li>
 <li>
-<p>The view is switched to the statistics tab to display the overalls statistics for the week.</p>
+<p>HintWindow retrieves hint from CommandHint to be displayed on hint window.</p>
+</li>
+<li>
+<p>HintWindow displays to show user parameters of deadline and its example.</p>
 </li>
 </ol>
 </div>
@@ -947,50 +925,14 @@ Users can choose to either export it to the default ./data filepath or specify t
 </div>
 </div>
 <div class="sect2">
-<h3 id="chat-bot-feature-to-be-implemented"><a class="link" href="#chat-bot-feature-to-be-implemented">3.7. Chat bot Feature (To be implemented)</a></h3>
-<div class="paragraph">
-<p>The CLI implementation is done through a chat bot like interface through a redesign of the user interface.</p>
-</div>
-<div class="sect3">
-<h4 id="implementation-7"><a class="link" href="#implementation-7">3.7.1. Implementation</a></h4>
-<div class="paragraph">
-<p>The user interface is split into 2 sections where commands will be keyed into the chat box on the left side. Feedback
-from the programme on the result of the command will be displayed directly by the chat bot where the command history
-can be viewed. Changes made to the model will be updated in the user interface on the right side</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="internal-workings-for-the-chat-bot"><a class="link" href="#internal-workings-for-the-chat-bot">3.7.2. Internal workings for the chat bot</a></h4>
-<div class="paragraph">
-<p>Below is an example of a user requesting for statistics by for the week and how the underlying system works.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The user enters a command <code>statistics</code></p>
-</li>
-<li>
-<p>The NASA application will process the command. (Refer to section 3.8 for details)</p>
-</li>
-<li>
-<p>Command result generated by the logic manager is returned and displayed in the chat bot.</p>
-</li>
-<li>
-<p>User interface switches tabs to the statistics tab where the overall statistics are displayed.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="motivational-quotes"><a class="link" href="#motivational-quotes">3.8. Motivational Quotes</a></h3>
+<h3 id="motivational-quotes"><a class="link" href="#motivational-quotes">3.7. Motivational Quotes</a></h3>
 <div class="paragraph">
 <p><code>Contributed by: EdmondOng</code>
 Given our hectic education lifestyle, we tend to neglect the emotional aspect of what makes life purposeful other than academic works.
 This features randomly select a quote and displayed to user on start-up of application. It aims to lighten the mood of the user.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-8"><a class="link" href="#implementation-8">3.8.1. Implementation</a></h4>
+<h4 id="implementation-7"><a class="link" href="#implementation-7">3.7.1. Implementation</a></h4>
 <div class="paragraph">
 <p>On the first start-up of application, Nasa will store all the quotes inside a text file in the data folder. If the quotes file is
 already present, it will carry on with selecting one of the quote to be displayed to the user. At any point of time, if you wish to see
@@ -998,7 +940,7 @@ another motivation quote, you can type <code>quote</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="internal-workings-for-the-motivation-quote"><a class="link" href="#internal-workings-for-the-motivation-quote">3.8.2. Internal workings for the motivation quote.</a></h4>
+<h4 id="internal-workings-for-the-motivation-quote"><a class="link" href="#internal-workings-for-the-motivation-quote">3.7.2. Internal workings for the motivation quote.</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1015,7 +957,7 @@ another motivation quote, you can type <code>quote</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="add-reminder-feature-coming-in-code-v2-0-code"><a class="link" href="#add-reminder-feature-coming-in-code-v2-0-code">3.9. Add Reminder Feature (Coming in <code>v2.0</code>)</a></h3>
+<h3 id="add-reminder-feature-coming-in-code-v2-0-code"><a class="link" href="#add-reminder-feature-coming-in-code-v2-0-code">3.8. Add Reminder Feature (Coming in <code>v2.0</code>)</a></h3>
 <div class="paragraph">
 <p>Reminders can be added to activities so that the user can be notified when the activity is going to occur soon.</p>
 </div>
@@ -1065,7 +1007,7 @@ another motivation quote, you can type <code>quote</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="snooze-reminder-feature-coming-in-code-v2-0-code"><a class="link" href="#snooze-reminder-feature-coming-in-code-v2-0-code">3.10. Snooze Reminder Feature (Coming in <code>v2.0</code>)</a></h3>
+<h3 id="snooze-reminder-feature-coming-in-code-v2-0-code"><a class="link" href="#snooze-reminder-feature-coming-in-code-v2-0-code">3.9. Snooze Reminder Feature (Coming in <code>v2.0</code>)</a></h3>
 <div class="paragraph">
 <p>Users can also snooze reminders so that they can get the same reminder at a different time.</p>
 </div>
@@ -1098,14 +1040,14 @@ another motivation quote, you can type <code>quote</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.11. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.10. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.12, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.11, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1136,7 +1078,7 @@ another motivation quote, you can type <code>quote</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.12. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.11. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2570,4 +2512,4 @@ Expected: A,B,C will be displayed in this sequence.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:44:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:55:33 UTC</div></div></div></body></html>
